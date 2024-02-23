@@ -33,6 +33,12 @@ public class CustomEnderPearl_1_8_R3 implements CustomEnderPearl {
 
         protected void a(MovingObjectPosition movingObjectPosition) {
             BlockPosition blockPos = movingObjectPosition.a();
+
+            if (blockPos == null) {
+                super.a(movingObjectPosition);
+                return;
+            }
+
             Location location = new Location(this.getBukkitEntity().getWorld(), blockPos.getX(), blockPos.getY(), blockPos.getZ());
             net.minecraft.server.v1_8_R3.Entity entity = movingObjectPosition.entity;
             Entity hitEntity = entity == null ? null : entity.getBukkitEntity();
