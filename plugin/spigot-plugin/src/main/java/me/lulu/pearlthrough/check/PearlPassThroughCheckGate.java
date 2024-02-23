@@ -14,7 +14,7 @@ public class PearlPassThroughCheckGate implements PearlPassThroughCheck {
         MaterialData data = block.getState().getData();
 
         if (data instanceof Gate)
-            return !(( Gate ) data).isOpen();
+            return (( Gate ) data).isOpen();
 
         return false;
     }
